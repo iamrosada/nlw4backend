@@ -3,15 +3,12 @@ import express from "express";
 
 const app = express();
 import './database'
+app.use(express.json());
 
-app.get("/",(request, response)=>{
-   
-    return response.json({mensage:"hello world"});
-})
+import { router } from "./routes";
 
-app.post("/",(request,response)=>{
-    return response.json({mensage:"os dados foram salvos"})
-})
+
+app.use(router)
 
 app.listen(3333,()=>{
     console.log("server is runing");
