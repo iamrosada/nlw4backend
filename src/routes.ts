@@ -10,5 +10,6 @@ const surveyController = new SurveyController()
 
 router.post("/users",userController.create)
 router.post("/survey",surveyController.create)
+router.get("/survey",surveyController.show)
 
 export {router}
